@@ -4,46 +4,140 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>thomillaz</title>
-    <link rel="stylesheet" href="./assets/style.css">
+    <title>Thomillaz</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+        }
+        :root{
+            --bg: #0c0020;
+            --bgNav: #0c0020cc;
+            --fontColor: #ecebed;
+            --fontNav: #5daff2;
+            --fontEffect: #69c6d6;
+            --linkHover: #9e72e0;
+        }
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--fontColor);
+            background-color: var(--bg);
+        }
+        #navbar{
+            background-color: var(--bgNav);
+            width: 100%;
+            height: 50px;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            top: 0;
+        }
+        #navbar ul li{
+            list-style: none;
+            display: inline-block;
+            margin-right: 5px;
+            width: 80px;
+            text-align: center;
+        }
+        #navbar ul li,
+        #navar ul li a:link,
+        #navbar ul li a:visited{
+            color: var(--fontNav);
+        }
+        #navbar ul li a:hover{
+            color: var(--linkHover);
+        }
+        #navbar ul li a:hover::before{
+            content: '{ ';
+            color: var(--fontEffect);
+        }
+        #navbar ul li a:hover::after{
+            content: ' }';
+            color: var(--fontEffect);
+        }
+        .container{
+            border-bottom: 1px solid red;
+            margin: 1px 0;
+            padding: 50px;
+            height: 100vh;
+        }
+        h2{
+            color: var(--linkHover);
+            font-size: 45px;
+            padding: 10px 0;
+        }
+        h2::before{
+            content: '</ ';
+            color: var(--fontEffect);
+        }
+        h2::after{
+            content: ' >';
+            color: var(--fontEffect);
+        }
+        #inicio{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        #inicio .hello{
+            display: flex;
+            flex-direction: column;
+            width: 750px;
+        }
+        #inicio h1{
+            font-size: 60px;
+        }
+        #inicio .description{
+            font-size: 30px;
+        }
+        #inicio .img{
+            display: block;
+            width: 300px;
+            height: 300px;
+            background-color: lightpink;
+        }
+    </style>
 </head>
 <body>
-    <nav id="social">
-        <ul>
-            <li><a href="/" title="github">github</a></li>
-            <li><a href="/" title="linkedin">linkedin</a></li>
-            <li><a href="/" title="instagram">instagram</a></li>
-            <li><a href="/" title="twitter">twitter</a></li>
-            <li><a href="/" title="medium">medium</a></li>
-        </ul>
-    </nav>
     <nav id="navbar">
         <ul>
-            <li><a href="/" title="início">início</a></li>
-            <li><a href="/" title="sobre">sobre</a></li>
-            <li><a href="/" title="skills">skills</a></li>
-            <li><a href="/" title="projetos">projetos</a></li>
+            <li><a href='#inicio' title='início'>início</a></li>
+            <li><a href='#sobre' title='sobre'>sobre</a></li>
+            <li><a href='#skills' title='skills'>skills</a></li>
+            <li><a href='#projetos' title='projetos'>projetos</a></li>
+            <li><a href='#estudos' title='estudos'>estudos</a></li>
+            <li><a href='#social' title='social'>social</a></li>
         </ul>
     </nav>
-    <header class="container">
-        <h1>Milla Thomaz</h1>
-        <div class="description">Front-End Developer</div>
+    <header class="container" id="inicio">
+        <div class="hello">
+            <h1>Olá, mundo!</h1>
+            <p class="description">
+                Eu sou a Milla Thomaz, e sou Desenvolvedora Front-End
+            </p>
+        </div>
+        <div class="img"></div>
     </header>
-    <main>
-        <div class="container">
-            <h2>Sobre</h2>
-        </div>
-        <div class="container">
-            <h2>Skills</h2>
-        </div>
-        <div class="container">
-            <h2>Projetos</h2>
-        </div>
-    </main>
-    <footer>
-        <div id="creditos">
-            Desenvolvido com amor & café por thomillaz
-        </div>
+    <div class="container" id="sobre">
+        <h2>Sobre</h2>
+    </div>
+    <div class="container" id="skills">
+        <h2>Skills</h2>
+    </div>
+    <div class="container" id="projetos">
+        <h2>Projetos</h2>
+    </div>
+    <div class="container" id="estudos">
+        <h2>Estudos</h2>
+    </div>
+    <footer class="container" id="social">
+        <h2>Social</h2>
     </footer>
 </body>
 </html>
